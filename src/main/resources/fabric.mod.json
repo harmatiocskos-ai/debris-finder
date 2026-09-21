@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "ancient-debris-finder",
+  "version": "${version}",
+  "name": "Ancient Debris Finder",
+  "description": "Highlights ancient debris through blocks and alerts in chat.",
+  "authors": ["you"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "meteor": ["me.debrisfinder.DebrisAddon"]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "*",
+    "java": ">=21",
+    "meteor-client": "*"
+  }
+}

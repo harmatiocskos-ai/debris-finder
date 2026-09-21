@@ -1,0 +1,30 @@
+plugins {
+    id 'fabric-loom' version '1.12-SNAPSHOT'
+}
+
+version = '1.0.0'
+group = 'me.debrisfinder'
+base { archivesName = 'ancient-debris-finder' }
+
+repositories {
+    maven { url = "https://maven.meteordev.org/releases" }
+    maven { url = "https://maven.meteordev.org/snapshots" }
+}
+
+dependencies {
+    // ---- If the build fails, these four lines are the ones to change. ----
+    minecraft "com.mojang:minecraft:1.21.11"
+    mappings "net.fabricmc:yarn:1.21.11+build.3:v2"
+    modImplementation "net.fabricmc:fabric-loader:0.16.10"
+    modImplementation "meteordevelopment:meteor-client:1.21.11-SNAPSHOT"
+}
+
+processResources {
+    inputs.property "version", project.version
+    filesMatching("fabric.mod.json") { expand "version": project.version }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
